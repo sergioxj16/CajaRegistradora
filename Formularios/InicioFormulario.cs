@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace CajaRegistradora
 {
-    public partial class LoginForm : Form
+    public partial class InicioFormulario : Form
     {
-        public LoginForm()
+        public InicioFormulario()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox2_TextChanged(object sender, EventArgs e)
+        private void InitializeComponent()
         {
 
         }
