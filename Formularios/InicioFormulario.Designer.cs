@@ -19,5 +19,13 @@
             }
             base.Dispose(disposing);
         }
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button button1;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Label label4;
     }
 }
