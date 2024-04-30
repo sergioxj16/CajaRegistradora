@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CajaRegistradora.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,88 +18,95 @@ namespace CajaRegistradora
             InitializeComponent();
         }
 
+        private readonly string usuarioAdmin = "admin";
+        private readonly string contrasenaAdmin = "admin123";
+
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            this.label3 = new Label();
-            this.button1 = new Button();
-            this.textBox1 = new TextBox();
-            this.textBox2 = new TextBox();
-            this.label4 = new Label();
+            mensajeBienvenida = new Label();
+            mensajeUsuario = new Label();
+            mensajeContrasena = new Label();
+            botonInicioSesion = new Button();
+            textBoxUsuario = new TextBox();
+            textBoxContrasena = new TextBox();
+            mensajeContrasenaOlvidada = new Label();
             SuspendLayout();
             // 
-            // Mensaje Bienvenido
+            // mensajeBienvenida
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(265, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(95, 20);
-            label1.TabIndex = 0;
-            label1.Text = "BIENVENIDO";
-            label1.Click += label1_Click;
+            mensajeBienvenida.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mensajeBienvenida.AutoSize = true;
+            mensajeBienvenida.Font = new Font("Segoe UI", 12F);
+            mensajeBienvenida.Location = new Point(251, 58);
+            mensajeBienvenida.Name = "mensajeBienvenida";
+            mensajeBienvenida.Size = new Size(124, 28);
+            mensajeBienvenida.TabIndex = 0;
+            mensajeBienvenida.Text = "BIENVENIDO";
+            mensajeBienvenida.Click += label1_Click;
             // 
-            // Mensaje Usuario
+            // mensajeUsuario
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(229, 139);
-            label2.Name = "label2";
-            label2.Size = new Size(59, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Usuario";
+            mensajeUsuario.AutoSize = true;
+            mensajeUsuario.Location = new Point(229, 139);
+            mensajeUsuario.Name = "mensajeUsuario";
+            mensajeUsuario.Size = new Size(59, 20);
+            mensajeUsuario.TabIndex = 1;
+            mensajeUsuario.Text = "Usuario";
             // 
-            // Mensaje Contraseña
+            // mensajeContrasena
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new Point(229, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new Size(83, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Contraseña";
+            mensajeContrasena.AutoSize = true;
+            mensajeContrasena.Location = new Point(229, 204);
+            mensajeContrasena.Name = "mensajeContrasena";
+            mensajeContrasena.Size = new Size(83, 20);
+            mensajeContrasena.TabIndex = 2;
+            mensajeContrasena.Text = "Contraseña";
             // 
-            // Boton inicio sesion
+            // botonInicioSesion
             // 
-            this.button1.Location = new Point(229, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new Size(166, 29);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Iniciar sesion";
-            this.button1.UseVisualStyleBackColor = true;
+            botonInicioSesion.Location = new Point(229, 286);
+            botonInicioSesion.Name = "botonInicioSesion";
+            botonInicioSesion.Size = new Size(166, 29);
+            botonInicioSesion.TabIndex = 3;
+            botonInicioSesion.Text = "Iniciar sesion";
+            botonInicioSesion.UseVisualStyleBackColor = true;
+            botonInicioSesion.Click += botonInicioSesion_Click;
             // 
-            // textBox Usuario
+            // textBoxUsuario
             // 
-            this.textBox1.Location = new Point(229, 162);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new Size(166, 27);
-            this.textBox1.TabIndex = 4;
+            textBoxUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxUsuario.Location = new Point(229, 162);
+            textBoxUsuario.Name = "textBoxUsuario";
+            textBoxUsuario.Size = new Size(166, 27);
+            textBoxUsuario.TabIndex = 4;
             // 
-            // textBox Contraseña
+            // textBoxContrasena
             // 
-            this.textBox2.Location = new Point(229, 227);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new Size(166, 27);
-            this.textBox2.TabIndex = 5;
+            textBoxContrasena.Location = new Point(229, 227);
+            textBoxContrasena.Name = "textBoxContrasena";
+            textBoxContrasena.Size = new Size(166, 27);
+            textBoxContrasena.TabIndex = 5;
             // 
-            // texto Contraseña olvidada
+            // mensajeContrasenaOlvidada
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new Font("Segoe UI", 7F);
-            this.label4.Location = new Point(229, 257);
-            this.label4.Name = "label4";
-            this.label4.Size = new Size(118, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Contraseña olividada";
+            mensajeContrasenaOlvidada.AutoSize = true;
+            mensajeContrasenaOlvidada.Font = new Font("Segoe UI", 7F);
+            mensajeContrasenaOlvidada.Location = new Point(229, 257);
+            mensajeContrasenaOlvidada.Name = "mensajeContrasenaOlvidada";
+            mensajeContrasenaOlvidada.Size = new Size(118, 15);
+            mensajeContrasenaOlvidada.TabIndex = 6;
+            mensajeContrasenaOlvidada.Text = "Contraseña olividada";
             // 
             // InicioFormulario
             // 
-            ClientSize = new Size(694, 453);
-            Controls.Add(this.label4);
-            Controls.Add(this.textBox2);
-            Controls.Add(this.textBox1);
-            Controls.Add(this.button1);
-            Controls.Add(this.label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(629, 453);
+            Controls.Add(mensajeContrasenaOlvidada);
+            Controls.Add(textBoxContrasena);
+            Controls.Add(textBoxUsuario);
+            Controls.Add(botonInicioSesion);
+            Controls.Add(mensajeContrasena);
+            Controls.Add(mensajeUsuario);
+            Controls.Add(mensajeBienvenida);
             Name = "InicioFormulario";
             ResumeLayout(false);
             PerformLayout();
@@ -107,6 +115,25 @@ namespace CajaRegistradora
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void botonInicioSesion_Click(object sender, EventArgs e)
+        {
+            // Verificar las credenciales ingresadas
+            string usuarioIngresado = textBoxUsuario.Text;
+            string contrasenaIngresada = textBoxContrasena.Text;
+
+            if (usuarioIngresado == usuarioAdmin && contrasenaIngresada == contrasenaAdmin)
+            {
+                // Mostrar el formulario principal
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide(); // Ocultar el formulario actual (InicioFormulario)
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

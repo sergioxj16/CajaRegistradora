@@ -1,16 +1,11 @@
-﻿namespace CajaRegistradora
+﻿using CajaRegistradora.Formularios;
+
+namespace CajaRegistradora
 {
     partial class InicioFormulario
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -19,13 +14,12 @@
             }
             base.Dispose(disposing);
         }
-
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label4;
+        private Label mensajeBienvenida;
+        private Label mensajeUsuario;
+        private Label mensajeContrasena;
+        private Button botonInicioSesion;
+        private TextBox textBoxUsuario;
+        private TextBox textBoxContrasena;
+        private Label mensajeContrasenaOlvidada;
     }
 }
