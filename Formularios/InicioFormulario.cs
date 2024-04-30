@@ -16,6 +16,10 @@ namespace CajaRegistradora
         public InicioFormulario()
         {
             InitializeComponent();
+            //Oculta el text introducido y los cambia por *
+            textBoxContrasena.PasswordChar = '*';
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private readonly string usuarioAdmin = "admin";
@@ -128,7 +132,7 @@ namespace CajaRegistradora
                 // Mostrar el formulario principal
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
                 menuPrincipal.Show();
-                this.Hide(); // Ocultar el formulario actual (InicioFormulario)
+                this.Hide(); // Ocultar el formulario actual
             }
             else
             {
