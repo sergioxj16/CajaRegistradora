@@ -1,13 +1,4 @@
 ﻿using CajaRegistradora.Formularios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CajaRegistradora
 {
@@ -20,8 +11,10 @@ namespace CajaRegistradora
             textBoxContrasena.PasswordChar = '*';
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
-            //Validar al pulsar intro
+            this.AcceptButton = null;
+            this.KeyPreview = true;
             this.KeyDown += InicioFormulario_KeyDown;
+
         }
 
         private readonly string usuarioAdmin = "admin";
@@ -83,7 +76,7 @@ namespace CajaRegistradora
             textBoxUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxUsuario.Location = new Point(229, 162);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(166, 27);
+            textBoxUsuario.Size = new Size(164, 27);
             textBoxUsuario.TabIndex = 4;
             // 
             // textBoxContrasena
@@ -105,7 +98,7 @@ namespace CajaRegistradora
             // 
             // InicioFormulario
             // 
-            ClientSize = new Size(629, 453);
+            ClientSize = new Size(627, 453);
             Controls.Add(mensajeContrasenaOlvidada);
             Controls.Add(textBoxContrasena);
             Controls.Add(textBoxUsuario);
@@ -125,18 +118,10 @@ namespace CajaRegistradora
 
         private void InicioFormulario_KeyDown(object sender, KeyEventArgs e)
         {
-            // Verificar si la tecla presionada es Enter
             if (e.KeyCode == Keys.Enter)
             {
-                // Realizar la validación de las credenciales
                 ValidarCredenciales();
             }
-        }
-
-        private void botonInicioSesion_Click(object sender, EventArgs e)
-        {
-            // Validar las credenciales al hacer clic en el botón de inicio de sesión
-            ValidarCredenciales();
         }
 
         private void ValidarCredenciales()
@@ -157,6 +142,12 @@ namespace CajaRegistradora
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void botonInicioSesion_Click(object sender, EventArgs e)
+        {
+            // Validar las credenciales al hacer clic en el botón de inicio de sesión
+            ValidarCredenciales();
         }
     }
 }
