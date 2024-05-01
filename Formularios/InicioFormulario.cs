@@ -20,6 +20,8 @@ namespace CajaRegistradora
             textBoxContrasena.PasswordChar = '*';
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
+            //Validar al pulsar intro
+            this.KeyDown += InicioFormulario_KeyDown;
         }
 
         private readonly string usuarioAdmin = "admin";
@@ -121,15 +123,32 @@ namespace CajaRegistradora
 
         }
 
+        private void InicioFormulario_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Verificar si la tecla presionada es Enter
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Realizar la validación de las credenciales
+                ValidarCredenciales();
+            }
+        }
+
         private void botonInicioSesion_Click(object sender, EventArgs e)
         {
-            // Verificar las credenciales ingresadas
+            // Validar las credenciales al hacer clic en el botón de inicio de sesión
+            ValidarCredenciales();
+        }
+
+        private void ValidarCredenciales()
+        {
+            // Obtener las credenciales ingresadas
             string usuarioIngresado = textBoxUsuario.Text;
             string contrasenaIngresada = textBoxContrasena.Text;
 
+            // Validar las credenciales
             if (usuarioIngresado == usuarioAdmin && contrasenaIngresada == contrasenaAdmin)
             {
-                // Mostrar el formulario principal
+                // Credenciales válidas: mostrar el formulario principal
                 MenuPrincipal menuPrincipal = new MenuPrincipal();
                 menuPrincipal.Show();
                 this.Hide(); // Ocultar el formulario actual
