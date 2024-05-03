@@ -127,16 +127,9 @@ namespace CajaRegistradora
 
             if (GestorUsuarios.VerificarCredenciales(usuarioIngresado, contrasenaIngresada))
             {
-                if (Administrador.EsAdministrador(usuarioIngresado))
-                {
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Funcionalidad no implementada para usuarios no administradores.");
-                }
+                MenuPrincipal menuPrincipal = new MenuPrincipal();
+                menuPrincipal.Show();
+                this.Hide();
             }
             else
             {

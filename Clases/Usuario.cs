@@ -32,7 +32,7 @@
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error al cargar usuarios desde el archivo: " + ex.Message);
+            MessageBox.Show("Error verificar credenciales" + ex.Message);
         }
         return false;
     }

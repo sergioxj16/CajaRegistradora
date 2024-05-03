@@ -19,7 +19,7 @@ namespace CajaRegistradora.Clases
             }
             else
             {
-                Console.WriteLine("El nombre de usuario ya existe. Por favor, elija otro nombre.");
+                MessageBox.Show("El usuario ya existe");
             }
         }
     }
