@@ -1,3 +1,5 @@
+using CajaRegistradora.Clases;
+
 namespace CajaRegistradora
 {
     internal static class Program
@@ -5,6 +7,7 @@ namespace CajaRegistradora
         [STAThread]
         static void Main()
         {
+            GestorUsuarios.CargarUsuariosDesdeArchivo("Datos//usuarios.txt");
             ApplicationConfiguration.Initialize();
             Application.Run(new InicioFormulario());
         }

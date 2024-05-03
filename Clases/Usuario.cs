@@ -1,38 +1,44 @@
-﻿namespace CajaRegistradora
+﻿public abstract class Usuario
 {
-    internal abstract class Usuario
+    protected string nombre;
+    protected string contrasena;
+
+    public Usuario(string nombre, string contrasena)
     {
-        private static Dictionary<string, string> usuarios = new Dictionary<string, string>();
+        this.nombre = nombre;
+        this.contrasena = contrasena;
+    }
 
-        string nombre;
-        string password;
-        bool esAdmin;
+    public string Nombre { get => nombre; set => nombre = value; }
+    public string Contrasena { get => contrasena; set => contrasena = value; }
 
-        public Usuario(string nombre, string password, bool esAdmin)
+    public static bool VerificarCredenciales(string nombre, string contrasena)
+    {
+
+        try
         {
-            this.nombre = nombre;
-            this.password = password;
-            this.esAdmin = esAdmin;
-
-            usuarios.Add(nombre, password);
+            string rutaArchivo = @"Datos\usuarios.txt";
+            string[] lineas = File.ReadAllLines(rutaArchivo);
+            foreach (string linea in lineas)
+            {
+                string[] datosUsuario = linea.Split(':');
+                string nombreUsuario = datosUsuario[0];
+                string contrasenaUsuario = datosUsuario[1];
+                if (nombreUsuario == nombre && contrasenaUsuario == contrasena)
+                {
+                    return true;
+                }
+            }
         }
-
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Password { get => password; set => password = value; }
-        public bool EsAdmin { get => esAdmin; set => esAdmin = value; }
-
-        public static bool VerificarCredenciales(string nombre, string password)
+        catch (Exception ex)
         {
-            bool autorizado = false;
-            if (usuarios.ContainsKey(nombre) && usuarios[nombre] == password)
-            {
-                autorizado = true;
-            }
-            else
-            {
-                autorizado = false;
-            }
-            return autorizado;
+            Console.WriteLine("Error al cargar usuarios desde el archivo: " + ex.Message);
         }
+        return false;
+    }
+
+    public static bool EsAdministrador(string nombre)
+    {
+        return false;
     }
 }

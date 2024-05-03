@@ -1,4 +1,5 @@
-﻿using CajaRegistradora.Formularios;
+﻿using CajaRegistradora.Clases;
+using CajaRegistradora.Formularios;
 
 namespace CajaRegistradora
 {
@@ -7,7 +8,6 @@ namespace CajaRegistradora
         public InicioFormulario()
         {
             InitializeComponent();
-            //Oculta el text introducido y los cambia por *
             textBoxContrasena.PasswordChar = '*';
             this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -16,9 +16,6 @@ namespace CajaRegistradora
             this.KeyDown += InicioFormulario_KeyDown;
 
         }
-
-        private readonly string usuarioAdmin = "admin";
-        private readonly string contrasenaAdmin = "admin123";
 
         private void InitializeComponent()
         {
@@ -41,7 +38,6 @@ namespace CajaRegistradora
             mensajeBienvenida.Size = new Size(124, 28);
             mensajeBienvenida.TabIndex = 0;
             mensajeBienvenida.Text = "BIENVENIDO";
-            mensajeBienvenida.Click += label1_Click;
             // 
             // mensajeUsuario
             // 
@@ -59,7 +55,7 @@ namespace CajaRegistradora
             mensajeContrasena.Name = "mensajeContrasena";
             mensajeContrasena.Size = new Size(83, 20);
             mensajeContrasena.TabIndex = 2;
-            mensajeContrasena.Text = "Contraseña";
+            mensajeContrasena.Text = "Contrasena";
             // 
             // botonInicioSesion
             // 
@@ -94,7 +90,7 @@ namespace CajaRegistradora
             mensajeContrasenaOlvidada.Name = "mensajeContrasenaOlvidada";
             mensajeContrasenaOlvidada.Size = new Size(118, 15);
             mensajeContrasenaOlvidada.TabIndex = 6;
-            mensajeContrasenaOlvidada.Text = "Contraseña olividada";
+            mensajeContrasenaOlvidada.Text = "Contrasena olividada";
             // 
             // InicioFormulario
             // 
@@ -111,11 +107,6 @@ namespace CajaRegistradora
             PerformLayout();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void InicioFormulario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -124,30 +115,33 @@ namespace CajaRegistradora
             }
         }
 
+        private void botonInicioSesion_Click(object sender, EventArgs e)
+        {
+            ValidarCredenciales();
+        }
+
         private void ValidarCredenciales()
         {
-            // Obtener las credenciales ingresadas
             string usuarioIngresado = textBoxUsuario.Text;
             string contrasenaIngresada = textBoxContrasena.Text;
 
-            // Validar las credenciales
-            if (usuarioIngresado == usuarioAdmin && contrasenaIngresada == contrasenaAdmin)
+            if (GestorUsuarios.VerificarCredenciales(usuarioIngresado, contrasenaIngresada))
             {
-                // Credenciales válidas: mostrar el formulario principal
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                menuPrincipal.Show();
-                this.Hide(); // Ocultar el formulario actual
+                if (Administrador.EsAdministrador(usuarioIngresado))
+                {
+                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    menuPrincipal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Funcionalidad no implementada para usuarios no administradores.");
+                }
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario o contrasena incorrectos", "Error de inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void botonInicioSesion_Click(object sender, EventArgs e)
-        {
-            // Validar las credenciales al hacer clic en el botón de inicio de sesión
-            ValidarCredenciales();
         }
     }
 }
