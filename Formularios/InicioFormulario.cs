@@ -127,9 +127,19 @@ namespace CajaRegistradora
 
             if (GestorUsuarios.VerificarCredenciales(usuarioIngresado, contrasenaIngresada))
             {
-                MenuPrincipal menuPrincipal = new MenuPrincipal();
-                menuPrincipal.Show();
-                this.Hide();
+
+                if(usuarioIngresado == "admin")
+                {
+                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    menuPrincipal.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MenuAdminFormulario menuAdmin = new MenuAdminFormulario();
+                    menuAdmin.Show();
+                    this.Hide();
+                }
             }
             else
             {
