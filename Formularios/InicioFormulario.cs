@@ -130,14 +130,14 @@ namespace CajaRegistradora
 
                 if(usuarioIngresado == "admin")
                 {
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.Show();
+                    botonDevolucion menuAdmin = new botonDevolucion();
+                    menuAdmin.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MenuAdminFormulario menuAdmin = new MenuAdminFormulario();
-                    menuAdmin.Show();
+                    MenuPrincipal menuPrincipal = new MenuPrincipal();
+                    menuPrincipal.Show();
                     this.Hide();
                 }
             }

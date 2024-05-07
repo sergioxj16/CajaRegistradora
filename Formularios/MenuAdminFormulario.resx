@@ -126,7 +126,7 @@
     <value>Segoe UI, 20pt</value>
   </data>
   <data name="mensajeMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>960, 50</value>
+    <value>951, 45</value>
   </data>
   <data name="mensajeMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 46</value>
@@ -147,19 +147,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mensajeMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
+  </data>
+  <data name="botonVenta.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
   </data>
   <data name="botonVenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 172</value>
+    <value>250, 170</value>
   </data>
   <data name="botonVenta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 98</value>
+    <value>212, 130</value>
   </data>
   <data name="botonVenta.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="botonVenta.Text" xml:space="preserve">
-    <value>venta</value>
+    <value>VENTA</value>
   </data>
   <data name="&gt;&gt;botonVenta.Name" xml:space="preserve">
     <value>botonVenta</value>
@@ -171,7 +174,140 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;botonVenta.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
+  </data>
+  <data name="DEVOLUCION.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
+  </data>
+  <data name="DEVOLUCION.Location" type="System.Drawing.Point, System.Drawing">
+    <value>900, 170</value>
+  </data>
+  <data name="DEVOLUCION.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 130</value>
+  </data>
+  <data name="DEVOLUCION.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="DEVOLUCION.Text" xml:space="preserve">
+    <value>DEVOLUCION</value>
+  </data>
+  <data name="&gt;&gt;DEVOLUCION.Name" xml:space="preserve">
+    <value>DEVOLUCION</value>
+  </data>
+  <data name="&gt;&gt;DEVOLUCION.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DEVOLUCION.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DEVOLUCION.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="botonHistorial.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
+  </data>
+  <data name="botonHistorial.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1460, 172</value>
+  </data>
+  <data name="botonHistorial.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 130</value>
+  </data>
+  <data name="botonHistorial.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="botonHistorial.Text" xml:space="preserve">
+    <value>HISTORIAL</value>
+  </data>
+  <data name="&gt;&gt;botonHistorial.Name" xml:space="preserve">
+    <value>botonHistorial</value>
+  </data>
+  <data name="&gt;&gt;botonHistorial.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;botonHistorial.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;botonHistorial.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="botonCerrarSesion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>900, 820</value>
+  </data>
+  <data name="botonCerrarSesion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 62</value>
+  </data>
+  <data name="botonCerrarSesion.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="botonCerrarSesion.Text" xml:space="preserve">
+    <value>CERRAR SESION</value>
+  </data>
+  <data name="&gt;&gt;botonCerrarSesion.Name" xml:space="preserve">
+    <value>botonCerrarSesion</value>
+  </data>
+  <data name="&gt;&gt;botonCerrarSesion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;botonCerrarSesion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;botonCerrarSesion.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="botonCupones.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
+  </data>
+  <data name="botonCupones.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 570</value>
+  </data>
+  <data name="botonCupones.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 128</value>
+  </data>
+  <data name="botonCupones.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="botonCupones.Text" xml:space="preserve">
+    <value>CUPONES</value>
+  </data>
+  <data name="&gt;&gt;botonCupones.Name" xml:space="preserve">
+    <value>botonCupones</value>
+  </data>
+  <data name="&gt;&gt;botonCupones.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;botonCupones.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;botonCupones.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="botonGestionarUsuarios.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
+  </data>
+  <data name="botonGestionarUsuarios.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1167, 570</value>
+  </data>
+  <data name="botonGestionarUsuarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 128</value>
+  </data>
+  <data name="botonGestionarUsuarios.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="botonGestionarUsuarios.Text" xml:space="preserve">
+    <value>GESTIONAR
+USUARIOS</value>
+  </data>
+  <data name="&gt;&gt;botonGestionarUsuarios.Name" xml:space="preserve">
+    <value>botonGestionarUsuarios</value>
+  </data>
+  <data name="&gt;&gt;botonGestionarUsuarios.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;botonGestionarUsuarios.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;botonGestionarUsuarios.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -190,7 +326,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MenuAdminFormulario</value>
+    <value>botonDevolucion</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
