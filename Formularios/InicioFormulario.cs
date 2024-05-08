@@ -74,6 +74,7 @@ namespace CajaRegistradora
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(164, 27);
             textBoxUsuario.TabIndex = 4;
+            textBoxUsuario.UseWaitCursor = true;
             // 
             // textBoxContrasena
             // 
@@ -81,6 +82,7 @@ namespace CajaRegistradora
             textBoxContrasena.Name = "textBoxContrasena";
             textBoxContrasena.Size = new Size(166, 27);
             textBoxContrasena.TabIndex = 5;
+            textBoxContrasena.UseSystemPasswordChar = true;
             // 
             // mensajeContrasenaOlvidada
             // 

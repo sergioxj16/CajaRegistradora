@@ -29,11 +29,22 @@
         private void InitializeComponent()
         {
             textoCrearUsuario = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            textBoxUsuarioCrear = new TextBox();
+            textBoxContrasenaCrearUsuario = new TextBox();
+            botonConfirmarCrearUsuario = new Button();
             botonVolverAtras = new Button();
             repitaContrasena = new TextBox();
+            textoBorrarUsuario = new Label();
+            botonConfirmarBorrarUsuario = new Button();
+            textBoxUsuarioBorrar = new TextBox();
+            textBoxConfirmar = new TextBox();
+            textoConfirmar = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            botonMostrarContrasena = new CheckBox();
+            textoUsuarioCreado = new Label();
             SuspendLayout();
             // 
             // textoCrearUsuario
@@ -45,31 +56,32 @@
             textoCrearUsuario.TabIndex = 0;
             textoCrearUsuario.Text = "CREAR USUARIO";
             // 
-            // textBox1
+            // textBoxUsuarioCrear
             // 
-            textBox1.Location = new Point(252, 337);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(133, 27);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Usuario";
+            textBoxUsuarioCrear.Location = new Point(252, 354);
+            textBoxUsuarioCrear.Name = "textBoxUsuarioCrear";
+            textBoxUsuarioCrear.Size = new Size(133, 27);
+            textBoxUsuarioCrear.TabIndex = 1;
+            textBoxUsuarioCrear.TextChanged += textBoxUsuarioCrear_TextChanged;
             // 
-            // textBox2
+            // textBoxContrasenaCrearUsuario
             // 
-            textBox2.Location = new Point(252, 384);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(133, 27);
-            textBox2.TabIndex = 2;
-            textBox2.Tag = "";
-            textBox2.Text = "Contraseña";
+            textBoxContrasenaCrearUsuario.Location = new Point(252, 407);
+            textBoxContrasenaCrearUsuario.Name = "textBoxContrasenaCrearUsuario";
+            textBoxContrasenaCrearUsuario.Size = new Size(133, 27);
+            textBoxContrasenaCrearUsuario.TabIndex = 2;
+            textBoxContrasenaCrearUsuario.Tag = "";
+            textBoxContrasenaCrearUsuario.TextChanged += textBoxContrasenaCrearUsuario_TextChanged;
             // 
-            // button1
+            // botonConfirmarCrearUsuario
             // 
-            button1.Location = new Point(252, 467);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 29);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            botonConfirmarCrearUsuario.Location = new Point(252, 526);
+            botonConfirmarCrearUsuario.Name = "botonConfirmarCrearUsuario";
+            botonConfirmarCrearUsuario.Size = new Size(133, 29);
+            botonConfirmarCrearUsuario.TabIndex = 3;
+            botonConfirmarCrearUsuario.Text = "CONFIRMAR";
+            botonConfirmarCrearUsuario.UseVisualStyleBackColor = true;
+            botonConfirmarCrearUsuario.Click += botonConfirmarCrearUsuario_Click;
             // 
             // botonVolverAtras
             // 
@@ -84,21 +96,129 @@
             // 
             // repitaContrasena
             // 
-            repitaContrasena.Location = new Point(252, 434);
+            repitaContrasena.Location = new Point(252, 470);
             repitaContrasena.Name = "repitaContrasena";
             repitaContrasena.Size = new Size(133, 27);
             repitaContrasena.TabIndex = 5;
+            repitaContrasena.TextChanged += repitaContrasena_TextChanged;
+            // 
+            // textoBorrarUsuario
+            // 
+            textoBorrarUsuario.AutoSize = true;
+            textoBorrarUsuario.Location = new Point(551, 300);
+            textoBorrarUsuario.Name = "textoBorrarUsuario";
+            textoBorrarUsuario.Size = new Size(132, 20);
+            textoBorrarUsuario.TabIndex = 6;
+            textoBorrarUsuario.Text = "BORRAR USUARIO";
+            // 
+            // botonConfirmarBorrarUsuario
+            // 
+            botonConfirmarBorrarUsuario.Location = new Point(551, 467);
+            botonConfirmarBorrarUsuario.Name = "botonConfirmarBorrarUsuario";
+            botonConfirmarBorrarUsuario.Size = new Size(133, 29);
+            botonConfirmarBorrarUsuario.TabIndex = 7;
+            botonConfirmarBorrarUsuario.Text = "CONFIRMAR";
+            botonConfirmarBorrarUsuario.UseVisualStyleBackColor = true;
+            // 
+            // textBoxUsuarioBorrar
+            // 
+            textBoxUsuarioBorrar.Location = new Point(550, 354);
+            textBoxUsuarioBorrar.Name = "textBoxUsuarioBorrar";
+            textBoxUsuarioBorrar.Size = new Size(133, 27);
+            textBoxUsuarioBorrar.TabIndex = 8;
+            // 
+            // textBoxConfirmar
+            // 
+            textBoxConfirmar.Location = new Point(550, 417);
+            textBoxConfirmar.Name = "textBoxConfirmar";
+            textBoxConfirmar.Size = new Size(133, 27);
+            textBoxConfirmar.TabIndex = 9;
+            // 
+            // textoConfirmar
+            // 
+            textoConfirmar.AutoSize = true;
+            textoConfirmar.Location = new Point(550, 394);
+            textoConfirmar.Name = "textoConfirmar";
+            textoConfirmar.Size = new Size(155, 20);
+            textoConfirmar.TabIndex = 10;
+            textoConfirmar.Text = "Escriba \"CONFIRMAR\"";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(252, 331);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 20);
+            label1.TabIndex = 11;
+            label1.Text = "Usuario";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(252, 384);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 20);
+            label2.TabIndex = 12;
+            label2.Text = "Contraseña";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(252, 447);
+            label3.Name = "label3";
+            label3.Size = new Size(128, 20);
+            label3.TabIndex = 13;
+            label3.Text = "Repita contraseña";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(551, 331);
+            label4.Name = "label4";
+            label4.Size = new Size(59, 20);
+            label4.TabIndex = 14;
+            label4.Text = "Usuario";
+            // 
+            // botonMostrarContrasena
+            // 
+            botonMostrarContrasena.AutoSize = true;
+            botonMostrarContrasena.Location = new Point(252, 496);
+            botonMostrarContrasena.Name = "botonMostrarContrasena";
+            botonMostrarContrasena.Size = new Size(158, 24);
+            botonMostrarContrasena.TabIndex = 15;
+            botonMostrarContrasena.Text = "Mostrar contraseña";
+            botonMostrarContrasena.UseVisualStyleBackColor = true;
+            botonMostrarContrasena.CheckedChanged += botonMostrarContrasena_CheckedChanged;
+            // 
+            // textoUsuarioCreado
+            // 
+            textoUsuarioCreado.AutoSize = true;
+            textoUsuarioCreado.Location = new Point(252, 570);
+            textoUsuarioCreado.Name = "textoUsuarioCreado";
+            textoUsuarioCreado.Size = new Size(0, 20);
+            textoUsuarioCreado.TabIndex = 16;
             // 
             // GestorDeUsuariosFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(textoUsuarioCreado);
+            Controls.Add(botonMostrarContrasena);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textoConfirmar);
+            Controls.Add(textBoxConfirmar);
+            Controls.Add(textBoxUsuarioBorrar);
+            Controls.Add(botonConfirmarBorrarUsuario);
+            Controls.Add(textoBorrarUsuario);
             Controls.Add(repitaContrasena);
             Controls.Add(botonVolverAtras);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(botonConfirmarCrearUsuario);
+            Controls.Add(textBoxContrasenaCrearUsuario);
+            Controls.Add(textBoxUsuarioCrear);
             Controls.Add(textoCrearUsuario);
             Name = "GestorDeUsuariosFormulario";
             Text = "GestorDeUsuarios";
@@ -109,10 +229,21 @@
         #endregion
 
         private Label textoCrearUsuario;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox textBoxUsuarioCrear;
+        private TextBox textBoxContrasenaCrearUsuario;
+        private Button botonConfirmarCrearUsuario;
         private Button botonVolverAtras;
         private TextBox repitaContrasena;
+        private Label textoBorrarUsuario;
+        private Button botonConfirmarBorrarUsuario;
+        private TextBox textBoxUsuarioBorrar;
+        private TextBox textBoxConfirmar;
+        private Label textoConfirmar;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private CheckBox botonMostrarContrasena;
+        private Label textoUsuarioCreado;
     }
 }

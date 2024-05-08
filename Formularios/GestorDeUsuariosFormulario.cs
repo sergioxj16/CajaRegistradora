@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CajaRegistradora.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,5 +25,85 @@ namespace CajaRegistradora.Formularios
             menuAdminFormulario.Show();
             this.Hide();
         }
+        private void textBoxUsuarioCrear_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void repitaContrasena_TextChanged(object sender, EventArgs e)
+        {
+            if (botonMostrarContrasena.Checked)
+            {
+                repitaContrasena.PasswordChar = '\0';
+            }
+            else
+            {
+                repitaContrasena.PasswordChar = '*';
+            }
+        }
+
+        private void textBoxContrasenaCrearUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+            if (botonMostrarContrasena.Checked)
+            {
+
+                textBoxContrasenaCrearUsuario.PasswordChar = '\0';
+            }
+            else
+            {
+                textBoxContrasenaCrearUsuario.PasswordChar = '*';
+            }
+        }
+
+        private void botonMostrarContrasena_CheckedChanged(object sender, EventArgs e)
+        {
+            if (botonMostrarContrasena.Checked)
+            {
+                textBoxContrasenaCrearUsuario.PasswordChar = '\0';
+                repitaContrasena.PasswordChar = '\0';
+            }
+            else
+            {
+                textBoxContrasenaCrearUsuario.PasswordChar = '*';
+                repitaContrasena.PasswordChar = '*';
+            }
+        }
+
+        private void botonConfirmarCrearUsuario_Click(object sender, EventArgs e)
+        {
+            string nombreUsuario = textBoxUsuarioCrear.Text;
+            string contrasena = textBoxContrasenaCrearUsuario.Text;
+            string repetirContrasena = repitaContrasena.Text;
+
+            if (contrasena != repetirContrasena)
+            {
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+            }
+            else if (string.IsNullOrWhiteSpace(nombreUsuario))
+            {
+                MessageBox.Show("El nombre de usuario no puede estar vacío. Por favor, ingrésalo.");
+            }
+            else if (GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
+            {
+                MessageBox.Show("El nombre de usuario ya existe. Por favor, elija otro nombre.");
+            }
+            else if(string.IsNullOrWhiteSpace(contrasena))
+            {
+                MessageBox.Show("El campo contraseña no puede estar vacia");
+            }
+            else if (contrasena == repetirContrasena && !GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
+            {
+                GestorUsuarios.Usuarios.Add(nombreUsuario, contrasena);
+                GestorUsuarios.GuardarUsuarioEnArchivo(nombreUsuario, contrasena);
+                MessageBox.Show("Usuario creado exitosamente.");
+            }
+            else
+            {
+                MessageBox.Show("Error desconocido.");
+            }
+            
+        }
     }
+    
 }
