@@ -1,6 +1,6 @@
 ﻿namespace CajaRegistradora.Formularios
 {
-    partial class botonDevolucion
+    partial class MenuAdminFormulario
     {
         /// <summary>
         /// Required designer variable.
@@ -22,7 +22,7 @@
 
         private Label mensajeMenu;
         private Button botonVenta;
-        private Button DEVOLUCION;
+        private Button botonDevolucion;
         private Button botonHistorial;
         private Button botonCerrarSesion;
         private Button botonCupones;

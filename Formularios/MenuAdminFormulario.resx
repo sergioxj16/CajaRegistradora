@@ -176,31 +176,31 @@
   <data name="&gt;&gt;botonVenta.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="DEVOLUCION.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="botonDevolucion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16pt</value>
   </data>
-  <data name="DEVOLUCION.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="botonDevolucion.Location" type="System.Drawing.Point, System.Drawing">
     <value>900, 170</value>
   </data>
-  <data name="DEVOLUCION.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="botonDevolucion.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 130</value>
   </data>
-  <data name="DEVOLUCION.TabIndex" type="System.Int32, mscorlib">
+  <data name="botonDevolucion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="DEVOLUCION.Text" xml:space="preserve">
+  <data name="botonDevolucion.Text" xml:space="preserve">
     <value>DEVOLUCION</value>
   </data>
-  <data name="&gt;&gt;DEVOLUCION.Name" xml:space="preserve">
-    <value>DEVOLUCION</value>
+  <data name="&gt;&gt;botonDevolucion.Name" xml:space="preserve">
+    <value>botonDevolucion</value>
   </data>
-  <data name="&gt;&gt;DEVOLUCION.Type" xml:space="preserve">
+  <data name="&gt;&gt;botonDevolucion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DEVOLUCION.Parent" xml:space="preserve">
+  <data name="&gt;&gt;botonDevolucion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;DEVOLUCION.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;botonDevolucion.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="botonHistorial.Font" type="System.Drawing.Font, System.Drawing">
@@ -326,7 +326,7 @@ USUARIOS</value>
     <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>botonDevolucion</value>
+    <value>MenuAdminFormulario</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

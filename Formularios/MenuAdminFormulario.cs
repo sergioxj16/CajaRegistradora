@@ -11,19 +11,19 @@ using System.Windows.Forms;
 
 namespace CajaRegistradora.Formularios
 {
-    public partial class botonDevolucion : Form
+    public partial class MenuAdminFormulario : Form
     {
-        public botonDevolucion()
+        public MenuAdminFormulario()
         {
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(botonDevolucion));
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(MenuAdminFormulario));
             mensajeMenu = new Label();
             botonVenta = new Button();
-            DEVOLUCION = new Button();
+            botonDevolucion = new Button();
             botonHistorial = new Button();
             botonCerrarSesion = new Button();
             botonCupones = new Button();
@@ -42,11 +42,11 @@ namespace CajaRegistradora.Formularios
             botonVenta.UseVisualStyleBackColor = true;
             botonVenta.Click += botonVenta_Click;
             // 
-            // DEVOLUCION
+            // botonDevolucion
             // 
-            resources.ApplyResources(DEVOLUCION, "DEVOLUCION");
-            DEVOLUCION.Name = "DEVOLUCION";
-            DEVOLUCION.UseVisualStyleBackColor = true;
+            resources.ApplyResources(botonDevolucion, "botonDevolucion");
+            botonDevolucion.Name = "botonDevolucion";
+            botonDevolucion.UseVisualStyleBackColor = true;
             // 
             // botonHistorial
             // 
@@ -59,6 +59,7 @@ namespace CajaRegistradora.Formularios
             resources.ApplyResources(botonCerrarSesion, "botonCerrarSesion");
             botonCerrarSesion.Name = "botonCerrarSesion";
             botonCerrarSesion.UseVisualStyleBackColor = true;
+            botonCerrarSesion.Click += botonCerrarSesion_Click;
             // 
             // botonCupones
             // 
@@ -71,8 +72,9 @@ namespace CajaRegistradora.Formularios
             resources.ApplyResources(botonGestionarUsuarios, "botonGestionarUsuarios");
             botonGestionarUsuarios.Name = "botonGestionarUsuarios";
             botonGestionarUsuarios.UseVisualStyleBackColor = true;
+            botonGestionarUsuarios.Click += botonGestionarUsuarios_Click;
             // 
-            // botonDevolucion
+            // MenuAdminFormulario
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             resources.ApplyResources(this, "$this");
@@ -81,10 +83,10 @@ namespace CajaRegistradora.Formularios
             Controls.Add(botonCupones);
             Controls.Add(botonCerrarSesion);
             Controls.Add(botonHistorial);
-            Controls.Add(DEVOLUCION);
+            Controls.Add(botonDevolucion);
             Controls.Add(botonVenta);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "botonDevolucion";
+            Name = "MenuAdminFormulario";
             WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
@@ -92,7 +94,19 @@ namespace CajaRegistradora.Formularios
 
         private void botonVenta_Click(object sender, EventArgs e)
         {
-            GestorDeUsuarios gestorDeusuarioFormulario = new GestorDeUsuarios();
+
+        }
+
+        private void botonCerrarSesion_Click(object sender, EventArgs e)
+        {
+            InicioFormulario inicioFormulario = new InicioFormulario();
+            inicioFormulario.Show();
+            this.Hide();
+        }
+
+        private void botonGestionarUsuarios_Click(object sender, EventArgs e)
+        {
+            GestorDeUsuariosFormulario gestorDeusuarioFormulario = new GestorDeUsuariosFormulario();
             gestorDeusuarioFormulario.Show();
             this.Hide();
         }

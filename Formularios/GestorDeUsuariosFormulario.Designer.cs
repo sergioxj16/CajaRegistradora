@@ -1,6 +1,6 @@
 ﻿namespace CajaRegistradora.Formularios
 {
-    partial class GestorDeUsuarios
+    partial class GestorDeUsuariosFormulario
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,8 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             button1 = new Button();
+            botonVolverAtras = new Button();
+            repitaContrasena = new TextBox();
             SuspendLayout();
             // 
             // textoCrearUsuario
@@ -45,7 +47,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(252, 347);
+            textBox1.Location = new Point(252, 337);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(133, 27);
             textBox1.TabIndex = 1;
@@ -53,7 +55,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(252, 410);
+            textBox2.Location = new Point(252, 384);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(133, 27);
             textBox2.TabIndex = 2;
@@ -69,16 +71,36 @@
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // GestorDeUsuarios
+            // botonVolverAtras
+            // 
+            botonVolverAtras.Font = new Font("Segoe UI", 12F);
+            botonVolverAtras.Location = new Point(123, 111);
+            botonVolverAtras.Name = "botonVolverAtras";
+            botonVolverAtras.Size = new Size(82, 37);
+            botonVolverAtras.TabIndex = 4;
+            botonVolverAtras.Text = "Volver";
+            botonVolverAtras.UseVisualStyleBackColor = true;
+            botonVolverAtras.Click += button2_Click;
+            // 
+            // repitaContrasena
+            // 
+            repitaContrasena.Location = new Point(252, 434);
+            repitaContrasena.Name = "repitaContrasena";
+            repitaContrasena.Size = new Size(133, 27);
+            repitaContrasena.TabIndex = 5;
+            // 
+            // GestorDeUsuariosFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(repitaContrasena);
+            Controls.Add(botonVolverAtras);
             Controls.Add(button1);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(textoCrearUsuario);
-            Name = "GestorDeUsuarios";
+            Name = "GestorDeUsuariosFormulario";
             Text = "GestorDeUsuarios";
             ResumeLayout(false);
             PerformLayout();
@@ -90,5 +112,7 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Button button1;
+        private Button botonVolverAtras;
+        private TextBox repitaContrasena;
     }
 }
