@@ -46,27 +46,19 @@ namespace CajaRegistradora.Clases
         }
         public static void GuardarUsuarioEnArchivo( string nombreUsuario, string contrasena)
         {
-            string rutaArchivo = "Datos/usuarios.txt";
+            string rutaArchivo = @"Datos\usuarios.txt";
             try
             {
-                if (!usuarios.ContainsKey(nombreUsuario))
+                usuarios.Add(nombreUsuario, contrasena);
+                using (StreamWriter escribirFichero = new StreamWriter(rutaArchivo, true))
                 {
-                    usuarios.Add(nombreUsuario, contrasena);
-                    using (StreamWriter writer = new StreamWriter(rutaArchivo, true))
-                    {
-                        writer.WriteLine($"{nombreUsuario}:{contrasena}");
-                    }
-                    MessageBox.Show("Usuario guardado correctamente.");
+                    escribirFichero.WriteLine($"{ nombreUsuario}:{contrasena}");
                 }
-                else
-                {
-                    MessageBox.Show("El nombre de usuario ya existe. Por favor, elija otro nombre.");
-                }
+                MessageBox.Show("Usuario guardado correctamente.");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar usuario: " + ex.Message);
-                Console.WriteLine("Error al guardar usuario en el archivo: " + ex.Message);
             }
         }
     }

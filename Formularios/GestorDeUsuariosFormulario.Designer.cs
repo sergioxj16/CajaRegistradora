@@ -44,7 +44,6 @@
             label3 = new Label();
             label4 = new Label();
             botonMostrarContrasena = new CheckBox();
-            textoUsuarioCreado = new Label();
             SuspendLayout();
             // 
             // textoCrearUsuario
@@ -78,7 +77,7 @@
             botonConfirmarCrearUsuario.Location = new Point(252, 526);
             botonConfirmarCrearUsuario.Name = "botonConfirmarCrearUsuario";
             botonConfirmarCrearUsuario.Size = new Size(133, 29);
-            botonConfirmarCrearUsuario.TabIndex = 3;
+            botonConfirmarCrearUsuario.TabIndex = 4;
             botonConfirmarCrearUsuario.Text = "CONFIRMAR";
             botonConfirmarCrearUsuario.UseVisualStyleBackColor = true;
             botonConfirmarCrearUsuario.Click += botonConfirmarCrearUsuario_Click;
@@ -99,7 +98,7 @@
             repitaContrasena.Location = new Point(252, 470);
             repitaContrasena.Name = "repitaContrasena";
             repitaContrasena.Size = new Size(133, 27);
-            repitaContrasena.TabIndex = 5;
+            repitaContrasena.TabIndex = 3;
             repitaContrasena.TextChanged += repitaContrasena_TextChanged;
             // 
             // textoBorrarUsuario
@@ -190,20 +189,11 @@
             botonMostrarContrasena.UseVisualStyleBackColor = true;
             botonMostrarContrasena.CheckedChanged += botonMostrarContrasena_CheckedChanged;
             // 
-            // textoUsuarioCreado
-            // 
-            textoUsuarioCreado.AutoSize = true;
-            textoUsuarioCreado.Location = new Point(252, 570);
-            textoUsuarioCreado.Name = "textoUsuarioCreado";
-            textoUsuarioCreado.Size = new Size(0, 20);
-            textoUsuarioCreado.TabIndex = 16;
-            // 
             // GestorDeUsuariosFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
-            Controls.Add(textoUsuarioCreado);
             Controls.Add(botonMostrarContrasena);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -244,6 +234,5 @@
         private Label label3;
         private Label label4;
         private CheckBox botonMostrarContrasena;
-        private Label textoUsuarioCreado;
     }
 }

@@ -72,38 +72,35 @@ namespace CajaRegistradora.Formularios
 
         private void botonConfirmarCrearUsuario_Click(object sender, EventArgs e)
         {
-            string nombreUsuario = textBoxUsuarioCrear.Text;
+            string nombreUsuario = textBoxUsuarioCrear.Text.Trim();
             string contrasena = textBoxContrasenaCrearUsuario.Text;
             string repetirContrasena = repitaContrasena.Text;
 
-            if (contrasena != repetirContrasena)
-            {
-                MessageBox.Show("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
-            }
-            else if (string.IsNullOrWhiteSpace(nombreUsuario))
-            {
-                MessageBox.Show("El nombre de usuario no puede estar vacío. Por favor, ingrésalo.");
-            }
-            else if (GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
+            if (GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
             {
                 MessageBox.Show("El nombre de usuario ya existe. Por favor, elija otro nombre.");
             }
-            else if(string.IsNullOrWhiteSpace(contrasena))
+            else if (contrasena != repetirContrasena)
             {
-                MessageBox.Show("El campo contraseña no puede estar vacia");
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+            }
+            else if (nombreUsuario == null || nombreUsuario == "")
+            {
+                MessageBox.Show("El nombre de usuario no puede estar vacío. Por favor, ingrésalo.");
+            }
+            else if (contrasena == null || contrasena == "")
+            {
+                MessageBox.Show("El campo contraseña no puede estar vacío. Por favor, ingrésalo.");
             }
             else if (contrasena == repetirContrasena && !GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
             {
-                GestorUsuarios.Usuarios.Add(nombreUsuario, contrasena);
                 GestorUsuarios.GuardarUsuarioEnArchivo(nombreUsuario, contrasena);
-                MessageBox.Show("Usuario creado exitosamente.");
             }
-            else
+            else 
             {
-                MessageBox.Show("Error desconocido.");
+                MessageBox.Show("Error desconocido");
             }
-            
         }
     }
-    
+
 }
