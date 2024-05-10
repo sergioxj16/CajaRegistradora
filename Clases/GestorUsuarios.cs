@@ -44,6 +44,7 @@ namespace CajaRegistradora.Clases
             }
             return false;
         }
+
         public static void GuardarUsuarioEnArchivo( string nombreUsuario, string contrasena)
         {
             string rutaArchivo = @"Datos\usuarios.txt";
@@ -59,6 +60,43 @@ namespace CajaRegistradora.Clases
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar usuario: " + ex.Message);
+            }
+        }
+        public static void BorrarUsuario(string nombreUsuario)
+        {
+            try
+            {
+                if (usuarios.ContainsKey(nombreUsuario))
+                {
+                    usuarios.Remove(nombreUsuario);
+
+                    ActualizarArchivoUsuarios();
+
+                    MessageBox.Show("Usuario eliminado correctamente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar usuario: " + ex.Message);
+            }
+        }
+
+        private static void ActualizarArchivoUsuarios()
+        {
+            string rutaArchivo = @"Datos\usuarios.txt";
+            try
+            {
+                using (StreamWriter escribirFichero = new StreamWriter(rutaArchivo, false))
+                {
+                    foreach (var usuario in usuarios)
+                    {
+                        escribirFichero.WriteLine($"{usuario.Key}:{usuario.Value}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el archivo de usuarios: " + ex.Message);
             }
         }
     }

@@ -44,6 +44,8 @@
             label3 = new Label();
             label4 = new Label();
             botonMostrarContrasena = new CheckBox();
+            listBoxUsuarios = new ListBox();
+            botonRefrescarUsuarios = new Button();
             SuspendLayout();
             // 
             // textoCrearUsuario
@@ -118,6 +120,7 @@
             botonConfirmarBorrarUsuario.TabIndex = 7;
             botonConfirmarBorrarUsuario.Text = "CONFIRMAR";
             botonConfirmarBorrarUsuario.UseVisualStyleBackColor = true;
+            botonConfirmarBorrarUsuario.Click += botonConfirmarBorrarUsuario_Click;
             // 
             // textBoxUsuarioBorrar
             // 
@@ -189,11 +192,31 @@
             botonMostrarContrasena.UseVisualStyleBackColor = true;
             botonMostrarContrasena.CheckedChanged += botonMostrarContrasena_CheckedChanged;
             // 
+            // listBoxUsuarios
+            // 
+            listBoxUsuarios.FormattingEnabled = true;
+            listBoxUsuarios.Location = new Point(782, 297);
+            listBoxUsuarios.Name = "listBoxUsuarios";
+            listBoxUsuarios.Size = new Size(287, 304);
+            listBoxUsuarios.TabIndex = 16;
+            // 
+            // botonRefrescarUsuarios
+            // 
+            botonRefrescarUsuarios.Location = new Point(979, 265);
+            botonRefrescarUsuarios.Name = "botonRefrescarUsuarios";
+            botonRefrescarUsuarios.Size = new Size(90, 26);
+            botonRefrescarUsuarios.TabIndex = 17;
+            botonRefrescarUsuarios.Text = "Refrescar";
+            botonRefrescarUsuarios.UseVisualStyleBackColor = true;
+            botonRefrescarUsuarios.Click += botonRefrescarUsuarios_Click;
+            // 
             // GestorDeUsuariosFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(botonRefrescarUsuarios);
+            Controls.Add(listBoxUsuarios);
             Controls.Add(botonMostrarContrasena);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -234,5 +257,7 @@
         private Label label3;
         private Label label4;
         private CheckBox botonMostrarContrasena;
+        private ListBox listBoxUsuarios;
+        private Button botonRefrescarUsuarios;
     }
 }

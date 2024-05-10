@@ -95,10 +95,54 @@ namespace CajaRegistradora.Formularios
             else if (contrasena == repetirContrasena && !GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
             {
                 GestorUsuarios.GuardarUsuarioEnArchivo(nombreUsuario, contrasena);
+                CargarUsuariosEnListBox();
             }
-            else 
+            else
             {
                 MessageBox.Show("Error desconocido");
+            }
+        }
+
+        private void botonRefrescarUsuarios_Click(object sender, EventArgs e)
+        {
+            CargarUsuariosEnListBox();
+        }
+
+        private void CargarUsuariosEnListBox()
+        {
+            listBoxUsuarios.Items.Clear();
+
+            foreach (var usuario in GestorUsuarios.Usuarios)
+            {
+                listBoxUsuarios.Items.Add(usuario.Key);
+            }
+        }
+
+        private void botonConfirmarBorrarUsuario_Click(object sender, EventArgs e)
+        {
+            string nombreUsuario = textBoxUsuarioBorrar.Text.Trim();
+            string confirmacion = textBoxConfirmar.Text;
+
+            if (!GestorUsuarios.Usuarios.ContainsKey(nombreUsuario))
+            {
+                MessageBox.Show("El nombre de usuario no existe");
+            }
+            else if (nombreUsuario == null || nombreUsuario == "")
+            {
+                MessageBox.Show("El nombre de usuario no puede estar vacío. Por favor, ingrésalo.");
+            }
+            else if (confirmacion == null || confirmacion == "")
+            {
+                MessageBox.Show("Debe escribir 'CONFIRMAR'");
+            }
+            else if (GestorUsuarios.Usuarios.ContainsKey(nombreUsuario) && confirmacion == "CONFIRMAR")
+            {
+                GestorUsuarios.BorrarUsuario(nombreUsuario);
+                CargarUsuariosEnListBox();
+            }
+            else
+            {
+                MessageBox.Show("Escriba 'CONFIRMAR' ");
             }
         }
     }
