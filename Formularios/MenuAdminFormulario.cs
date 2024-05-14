@@ -28,6 +28,8 @@ namespace CajaRegistradora.Formularios
             botonCerrarSesion = new Button();
             botonCupones = new Button();
             botonGestionarUsuarios = new Button();
+            botonProducto = new Button();
+            botonInventario = new Button();
             SuspendLayout();
             // 
             // mensajeMenu
@@ -74,10 +76,25 @@ namespace CajaRegistradora.Formularios
             botonGestionarUsuarios.UseVisualStyleBackColor = true;
             botonGestionarUsuarios.Click += botonGestionarUsuarios_Click;
             // 
+            // botonProducto
+            // 
+            resources.ApplyResources(botonProducto, "botonProducto");
+            botonProducto.Name = "botonProducto";
+            botonProducto.UseVisualStyleBackColor = true;
+            botonProducto.Click += botonProducto_Click;
+            // 
+            // botonInventario
+            // 
+            resources.ApplyResources(botonInventario, "botonInventario");
+            botonInventario.Name = "botonInventario";
+            botonInventario.UseVisualStyleBackColor = true;
+            // 
             // MenuAdminFormulario
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             resources.ApplyResources(this, "$this");
+            Controls.Add(botonInventario);
+            Controls.Add(botonProducto);
             Controls.Add(mensajeMenu);
             Controls.Add(botonGestionarUsuarios);
             Controls.Add(botonCupones);
@@ -109,6 +126,12 @@ namespace CajaRegistradora.Formularios
             GestorDeUsuariosFormulario gestorDeusuarioFormulario = new GestorDeUsuariosFormulario();
             gestorDeusuarioFormulario.Show();
             this.Hide();
+        }
+
+        private void botonProducto_Click(object sender, EventArgs e)
+        {
+            ProductoFormulario producto = new ProductoFormulario();
+            producto.Show();
         }
     }
 }

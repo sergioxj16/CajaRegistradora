@@ -12,11 +12,6 @@ namespace CajaRegistradora.Clases
         {
             return Usuario.VerificarCredenciales(nombreUsuario, contrasena);
         }
-
-        public static bool EsAdministrador(string nombreUsuario)
-        {
-            return Usuario.EsAdministrador(nombreUsuario);
-        }
     }
 
 }

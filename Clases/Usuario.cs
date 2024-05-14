@@ -36,9 +36,4 @@
         }
         return false;
     }
-
-    public static bool EsAdministrador(string nombre)
-    {
-        return false;
-    }
 }

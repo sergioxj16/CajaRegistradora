@@ -46,12 +46,13 @@
             botonMostrarContrasena = new CheckBox();
             listBoxUsuarios = new ListBox();
             botonRefrescarUsuarios = new Button();
+            label5 = new Label();
             SuspendLayout();
             // 
             // textoCrearUsuario
             // 
             textoCrearUsuario.AutoSize = true;
-            textoCrearUsuario.Location = new Point(252, 300);
+            textoCrearUsuario.Location = new Point(604, 300);
             textoCrearUsuario.Name = "textoCrearUsuario";
             textoCrearUsuario.Size = new Size(120, 20);
             textoCrearUsuario.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // textBoxUsuarioCrear
             // 
-            textBoxUsuarioCrear.Location = new Point(252, 354);
+            textBoxUsuarioCrear.Location = new Point(604, 354);
             textBoxUsuarioCrear.Name = "textBoxUsuarioCrear";
             textBoxUsuarioCrear.Size = new Size(133, 27);
             textBoxUsuarioCrear.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             // textBoxContrasenaCrearUsuario
             // 
-            textBoxContrasenaCrearUsuario.Location = new Point(252, 407);
+            textBoxContrasenaCrearUsuario.Location = new Point(604, 422);
             textBoxContrasenaCrearUsuario.Name = "textBoxContrasenaCrearUsuario";
             textBoxContrasenaCrearUsuario.Size = new Size(133, 27);
             textBoxContrasenaCrearUsuario.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             // botonConfirmarCrearUsuario
             // 
-            botonConfirmarCrearUsuario.Location = new Point(252, 526);
+            botonConfirmarCrearUsuario.Location = new Point(604, 554);
             botonConfirmarCrearUsuario.Name = "botonConfirmarCrearUsuario";
             botonConfirmarCrearUsuario.Size = new Size(133, 29);
             botonConfirmarCrearUsuario.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             // repitaContrasena
             // 
-            repitaContrasena.Location = new Point(252, 470);
+            repitaContrasena.Location = new Point(604, 491);
             repitaContrasena.Name = "repitaContrasena";
             repitaContrasena.Size = new Size(133, 27);
             repitaContrasena.TabIndex = 3;
@@ -106,7 +107,7 @@
             // textoBorrarUsuario
             // 
             textoBorrarUsuario.AutoSize = true;
-            textoBorrarUsuario.Location = new Point(551, 300);
+            textoBorrarUsuario.Location = new Point(906, 300);
             textoBorrarUsuario.Name = "textoBorrarUsuario";
             textoBorrarUsuario.Size = new Size(132, 20);
             textoBorrarUsuario.TabIndex = 6;
@@ -114,7 +115,7 @@
             // 
             // botonConfirmarBorrarUsuario
             // 
-            botonConfirmarBorrarUsuario.Location = new Point(551, 467);
+            botonConfirmarBorrarUsuario.Location = new Point(906, 468);
             botonConfirmarBorrarUsuario.Name = "botonConfirmarBorrarUsuario";
             botonConfirmarBorrarUsuario.Size = new Size(133, 29);
             botonConfirmarBorrarUsuario.TabIndex = 7;
@@ -124,14 +125,14 @@
             // 
             // textBoxUsuarioBorrar
             // 
-            textBoxUsuarioBorrar.Location = new Point(550, 354);
+            textBoxUsuarioBorrar.Location = new Point(906, 354);
             textBoxUsuarioBorrar.Name = "textBoxUsuarioBorrar";
             textBoxUsuarioBorrar.Size = new Size(133, 27);
             textBoxUsuarioBorrar.TabIndex = 8;
             // 
             // textBoxConfirmar
             // 
-            textBoxConfirmar.Location = new Point(550, 417);
+            textBoxConfirmar.Location = new Point(906, 422);
             textBoxConfirmar.Name = "textBoxConfirmar";
             textBoxConfirmar.Size = new Size(133, 27);
             textBoxConfirmar.TabIndex = 9;
@@ -139,7 +140,7 @@
             // textoConfirmar
             // 
             textoConfirmar.AutoSize = true;
-            textoConfirmar.Location = new Point(550, 394);
+            textoConfirmar.Location = new Point(906, 399);
             textoConfirmar.Name = "textoConfirmar";
             textoConfirmar.Size = new Size(155, 20);
             textoConfirmar.TabIndex = 10;
@@ -148,7 +149,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(252, 331);
+            label1.Location = new Point(604, 331);
             label1.Name = "label1";
             label1.Size = new Size(59, 20);
             label1.TabIndex = 11;
@@ -157,7 +158,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(252, 384);
+            label2.Location = new Point(604, 399);
             label2.Name = "label2";
             label2.Size = new Size(83, 20);
             label2.TabIndex = 12;
@@ -166,7 +167,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(252, 447);
+            label3.Location = new Point(604, 468);
             label3.Name = "label3";
             label3.Size = new Size(128, 20);
             label3.TabIndex = 13;
@@ -175,7 +176,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(551, 331);
+            label4.Location = new Point(906, 331);
             label4.Name = "label4";
             label4.Size = new Size(59, 20);
             label4.TabIndex = 14;
@@ -184,7 +185,7 @@
             // botonMostrarContrasena
             // 
             botonMostrarContrasena.AutoSize = true;
-            botonMostrarContrasena.Location = new Point(252, 496);
+            botonMostrarContrasena.Location = new Point(604, 524);
             botonMostrarContrasena.Name = "botonMostrarContrasena";
             botonMostrarContrasena.Size = new Size(158, 24);
             botonMostrarContrasena.TabIndex = 15;
@@ -195,14 +196,14 @@
             // listBoxUsuarios
             // 
             listBoxUsuarios.FormattingEnabled = true;
-            listBoxUsuarios.Location = new Point(782, 297);
+            listBoxUsuarios.Location = new Point(1173, 300);
             listBoxUsuarios.Name = "listBoxUsuarios";
             listBoxUsuarios.Size = new Size(287, 304);
             listBoxUsuarios.TabIndex = 16;
             // 
             // botonRefrescarUsuarios
             // 
-            botonRefrescarUsuarios.Location = new Point(979, 265);
+            botonRefrescarUsuarios.Location = new Point(1370, 268);
             botonRefrescarUsuarios.Name = "botonRefrescarUsuarios";
             botonRefrescarUsuarios.Size = new Size(90, 26);
             botonRefrescarUsuarios.TabIndex = 17;
@@ -210,11 +211,21 @@
             botonRefrescarUsuarios.UseVisualStyleBackColor = true;
             botonRefrescarUsuarios.Click += botonRefrescarUsuarios_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(1173, 277);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 20);
+            label5.TabIndex = 18;
+            label5.Text = "Usuarios";
+            // 
             // GestorDeUsuariosFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1902, 1033);
+            Controls.Add(label5);
             Controls.Add(botonRefrescarUsuarios);
             Controls.Add(listBoxUsuarios);
             Controls.Add(botonMostrarContrasena);
@@ -259,5 +270,6 @@
         private CheckBox botonMostrarContrasena;
         private ListBox listBoxUsuarios;
         private Button botonRefrescarUsuarios;
+        private Label label5;
     }
 }

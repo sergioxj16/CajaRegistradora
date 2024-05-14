@@ -27,5 +27,7 @@
         private Button botonCerrarSesion;
         private Button botonCupones;
         private Button botonGestionarUsuarios;
+        private Button botonProducto;
+        private Button botonInventario;
     }
 }

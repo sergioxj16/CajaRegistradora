@@ -9,18 +9,5 @@ namespace CajaRegistradora.Clases
         public Administrador(string nombre, string password) : base(nombre, password)
         {
         }
-
-        public static void CrearUsuario(string nombre, string contrasena)
-        {
-            if (!GestorUsuarios.Usuarios.ContainsKey(nombre))
-            {
-                GestorUsuarios.Usuarios.Add(nombre, contrasena);
-                Console.WriteLine("Usuario creado exitosamente.");
-            }
-            else
-            {
-                MessageBox.Show("El usuario ya existe");
-            }
-        }
     }
 }

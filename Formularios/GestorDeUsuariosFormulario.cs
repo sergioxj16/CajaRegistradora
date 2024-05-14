@@ -16,7 +16,9 @@ namespace CajaRegistradora.Formularios
         public GestorDeUsuariosFormulario()
         {
             InitializeComponent();
-
+            CargarUsuariosEnListBox();
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void button2_Click(object sender, EventArgs e)

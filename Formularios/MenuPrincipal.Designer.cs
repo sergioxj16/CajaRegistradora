@@ -49,7 +49,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Name = "MenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MenuPrincipal";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
             PerformLayout();
         }
