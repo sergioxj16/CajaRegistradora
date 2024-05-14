@@ -2,22 +2,34 @@
 {
     internal class Producto
     {
-        string Codigo;
-        string Nombre;
-        double PrecioCompra;
-        double PrecioVenta;
+        private string codigo;
+        private string nombre;
+        private double precioCompra;
+        private double precioVenta;
+        private int stock;
 
-        public Producto(string codigo, string nombre, double precioCompra, double precioVenta)
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public double PrecioCompra { get => precioCompra; set => precioCompra = value; }
+        public double PrecioVenta { get => precioVenta; set => precioVenta = value; }
+        public int Stock { get => stock; set => stock = value; }
+
+        public Producto(string codigo, string nombre, double precioVenta)
+        {
+            this.Codigo = codigo;
+            this.Nombre = nombre;
+            this.PrecioVenta = precioVenta;
+            this.PrecioCompra = 0; 
+            this.Stock = 0; 
+        }
+
+        public Producto(string codigo, string nombre, double precioCompra, double precioVenta, int stock)
         {
             this.Codigo = codigo;
             this.Nombre = nombre;
             this.PrecioCompra = precioCompra;
             this.PrecioVenta = precioVenta;
+            this.Stock = stock;
         }
-
-        public string Codigo1 { get => Codigo; set => Codigo = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public double PrecioCompra1 { get => PrecioCompra; set => PrecioCompra = value; }
-        public double PrecioVenta1 { get => PrecioVenta; set => PrecioVenta = value; }
     }
 }

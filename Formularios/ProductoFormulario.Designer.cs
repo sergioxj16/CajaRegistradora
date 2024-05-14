@@ -33,11 +33,10 @@
             codigoProductoTextBox = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            NombreTextBox = new TextBox();
-            textBox1 = new TextBox();
+            nombreTextBox = new TextBox();
+            precioTextBox = new TextBox();
             Precio = new Label();
             botonAceptar = new Button();
-            label4 = new Label();
             SuspendLayout();
             // 
             // botonVolver
@@ -65,7 +64,7 @@
             codigoProductoTextBox.Location = new Point(223, 147);
             codigoProductoTextBox.Name = "codigoProductoTextBox";
             codigoProductoTextBox.Size = new Size(197, 27);
-            codigoProductoTextBox.TabIndex = 2;
+            codigoProductoTextBox.TabIndex = 0;
             // 
             // label2
             // 
@@ -85,19 +84,19 @@
             label3.TabIndex = 4;
             label3.Text = "Nombre";
             // 
-            // NombreTextBox
+            // nombreTextBox
             // 
-            NombreTextBox.Location = new Point(223, 200);
-            NombreTextBox.Name = "NombreTextBox";
-            NombreTextBox.Size = new Size(197, 27);
-            NombreTextBox.TabIndex = 5;
+            nombreTextBox.Location = new Point(223, 200);
+            nombreTextBox.Name = "nombreTextBox";
+            nombreTextBox.Size = new Size(197, 27);
+            nombreTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // precioTextBox
             // 
-            textBox1.Location = new Point(223, 254);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 27);
-            textBox1.TabIndex = 6;
+            precioTextBox.Location = new Point(223, 254);
+            precioTextBox.Name = "precioTextBox";
+            precioTextBox.Size = new Size(197, 27);
+            precioTextBox.TabIndex = 2;
             // 
             // Precio
             // 
@@ -113,29 +112,20 @@
             botonAceptar.Location = new Point(271, 308);
             botonAceptar.Name = "botonAceptar";
             botonAceptar.Size = new Size(94, 29);
-            botonAceptar.TabIndex = 8;
+            botonAceptar.TabIndex = 3;
             botonAceptar.Text = "Aceptar";
             botonAceptar.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(291, 359);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 9;
-            label4.Text = "label4";
+            botonAceptar.Click += botonAceptar_Click;
             // 
             // ProductoFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(627, 453);
-            Controls.Add(label4);
             Controls.Add(botonAceptar);
             Controls.Add(Precio);
-            Controls.Add(textBox1);
-            Controls.Add(NombreTextBox);
+            Controls.Add(precioTextBox);
+            Controls.Add(nombreTextBox);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(codigoProductoTextBox);
@@ -155,10 +145,9 @@
         private TextBox codigoProductoTextBox;
         private Label label2;
         private Label label3;
-        private TextBox NombreTextBox;
-        private TextBox textBox1;
+        private TextBox nombreTextBox;
+        private TextBox precioTextBox;
         private Label Precio;
         private Button botonAceptar;
-        private Label label4;
     }
 }

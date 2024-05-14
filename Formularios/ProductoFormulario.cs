@@ -24,5 +24,14 @@ namespace CajaRegistradora.Formularios
         {
             this.Hide();
         }
+
+        private void botonAceptar_Click(object sender, EventArgs e)
+        {
+            string codigoProducto = codigoProductoTextBox.Text;
+            string nombreProducto = nombreTextBox.Text;
+            double precioProducto = Convert.ToDouble(precioTextBox.Text);
+
+
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace CajaRegistradora
         [STAThread]
         static void Main()
         {
-            GestorUsuarios.CargarUsuariosDesdeArchivo("Datos/usuarios.txt");
+            GestorUsuarios.CargarUsuariosDesdeArchivo();
             ApplicationConfiguration.Initialize();
             Application.Run(new InicioFormulario());
         }

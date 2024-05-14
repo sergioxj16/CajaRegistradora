@@ -11,8 +11,9 @@ namespace CajaRegistradora.Clases
         private static Dictionary<string, string> usuarios = new Dictionary<string, string>();
         public static Dictionary<string, string> Usuarios { get => usuarios; }
 
-        public static void CargarUsuariosDesdeArchivo(string rutaArchivo)
+        public static void CargarUsuariosDesdeArchivo()
         {
+            string rutaArchivo = @"Datos\usuarios.txt";
             try
             {
                 string[] lineas = File.ReadAllLines(rutaArchivo);
