@@ -1,4 +1,5 @@
 using CajaRegistradora.Clases;
+using CajaRegistradora.Formularios;
 
 namespace CajaRegistradora
 {
@@ -9,6 +10,10 @@ namespace CajaRegistradora
         {
             GestorUsuarios.CargarUsuariosDesdeArchivo();
             ApplicationConfiguration.Initialize();
+
+            Inventario inventario = new Inventario();
+            inventario.CargarInventarioDesdeArchivo();
+
             Application.Run(new InicioFormulario());
         }
     }

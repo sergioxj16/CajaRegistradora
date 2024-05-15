@@ -1,35 +1,40 @@
-﻿namespace CajaRegistradora.Clases
+﻿using System;
+
+namespace CajaRegistradora.Clases
 {
     internal class Producto
     {
-        private string codigo;
-        private string nombre;
-        private double precioCompra;
-        private double precioVenta;
-        private int stock;
+        public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        public double PrecioCompra { get; set; }
+        public double PrecioVenta { get; set; }
+        public int Stock { get; set; }
 
-        public string Codigo { get => codigo; set => codigo = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public double PrecioCompra { get => precioCompra; set => precioCompra = value; }
-        public double PrecioVenta { get => precioVenta; set => precioVenta = value; }
-        public int Stock { get => stock; set => stock = value; }
+        public Producto()
+        {
+            Codigo = "";
+            Nombre = "";
+            PrecioCompra = 0;
+            PrecioVenta = 0;
+            Stock = 0;
+        }
 
         public Producto(string codigo, string nombre, double precioVenta)
         {
-            this.Codigo = codigo;
-            this.Nombre = nombre;
-            this.PrecioVenta = precioVenta;
-            this.PrecioCompra = 0; 
-            this.Stock = 0; 
+            Codigo = codigo;
+            Nombre = nombre;
+            PrecioVenta = precioVenta;
+            PrecioCompra = 0;
+            Stock = 0;
         }
 
         public Producto(string codigo, string nombre, double precioCompra, double precioVenta, int stock)
         {
-            this.Codigo = codigo;
-            this.Nombre = nombre;
-            this.PrecioCompra = precioCompra;
-            this.PrecioVenta = precioVenta;
-            this.Stock = stock;
+            Codigo = codigo;
+            Nombre = nombre;
+            PrecioCompra = precioCompra;
+            PrecioVenta = precioVenta;
+            Stock = stock;
         }
     }
 }

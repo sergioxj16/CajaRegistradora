@@ -130,8 +130,10 @@ namespace CajaRegistradora.Formularios
 
         private void botonProducto_Click(object sender, EventArgs e)
         {
-            ProductoFormulario producto = new ProductoFormulario();
+            Inventario inventario = new Inventario();
+            ProductoFormulario producto = new ProductoFormulario(inventario);
             producto.Show();
         }
+
     }
 }

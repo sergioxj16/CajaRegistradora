@@ -1,37 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CajaRegistradora.Clases;
+using System;
 using System.Windows.Forms;
 
 namespace CajaRegistradora.Formularios
 {
-    public partial class ProductoFormulario : Form
+    internal partial class ProductoFormulario : Form
     {
-        public ProductoFormulario()
+        private readonly Inventario inventario;
+
+        public ProductoFormulario(Inventario inventario)
         {
             InitializeComponent();
+            this.inventario = inventario;
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            MaximizeBox = false;
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void botonVolver_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             string codigoProducto = codigoProductoTextBox.Text;
             string nombreProducto = nombreTextBox.Text;
-            double precioProducto = Convert.ToDouble(precioTextBox.Text);
+            double precioProducto;
 
+            if (string.IsNullOrWhiteSpace(codigoProducto) || string.IsNullOrWhiteSpace(nombreProducto) || !double.TryParse(precioTextBox.Text, out precioProducto))
+            {
+                MessageBox.Show("Por favor, ingrese valores válidos.");
+                return;
+            }
 
+            if (!inventario.Productos.ContainsKey(codigoProducto))
+            {
+                Producto nuevoProducto = new Producto(codigoProducto, nombreProducto, precioProducto);
+                inventario.AgregarProducto(nuevoProducto);
+                MessageBox.Show("Producto creado exitosamente.");
+                inventario.GuardarInventarioEnArchivo();
+            }
+            else
+            {
+                MessageBox.Show("El producto ya existe en el inventario.");
+            }
         }
     }
 }
