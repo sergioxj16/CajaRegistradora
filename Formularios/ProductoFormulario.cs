@@ -26,19 +26,26 @@ namespace CajaRegistradora.Formularios
         {
             string codigoProducto = codigoProductoTextBox.Text;
             string nombreProducto = nombreTextBox.Text;
-            double precioProducto;
+            double precioVenta = 0;
+            double precioCompra = 0;
+            int stock = 0;
 
-            if (string.IsNullOrWhiteSpace(codigoProducto) || string.IsNullOrWhiteSpace(nombreProducto) || !double.TryParse(precioTextBox.Text, out precioProducto))
+            bool precioVentaValido = double.TryParse(precioVentaTextBox.Text, out precioVenta);
+            bool precioCompraValido = double.TryParse(precioCompraTextBox.Text, out precioCompra);
+            bool stockValido = int.TryParse(stockTextBox.Text, out stock);
+
+            if (!precioVentaValido || !precioCompraValido || !stockValido)
             {
                 MessageBox.Show("Por favor, ingrese valores válidos.");
-                return;
             }
-
-            if (!inventario.Productos.ContainsKey(codigoProducto))
+            else if (!inventario.Productos.ContainsKey(codigoProducto))
             {
-                Producto nuevoProducto = new Producto(codigoProducto, nombreProducto, precioProducto);
+                Producto nuevoProducto = new Producto(codigoProducto, nombreProducto, precioVenta, precioCompra, stock);
+
                 inventario.AgregarProducto(nuevoProducto);
+
                 MessageBox.Show("Producto creado exitosamente.");
+
                 inventario.GuardarInventarioEnArchivo();
             }
             else
@@ -46,5 +53,26 @@ namespace CajaRegistradora.Formularios
                 MessageBox.Show("El producto ya existe en el inventario.");
             }
         }
+
+        private void botonBorrarProducto_Click(object sender, EventArgs e)
+        {
+            string codigo = codigoProductoEliminarTextBox.Text;
+
+            if (codigo == null || codigo == "")
+            {
+                MessageBox.Show("Por favor, ingrese un código de producto válido.");
+            }
+            else if (inventario.Productos.ContainsKey(codigo))
+            {
+                inventario.EliminarProducto(codigo);
+                inventario.GuardarInventarioEnArchivo();
+                MessageBox.Show("Producto eliminado correctamente.");
+            }
+            else
+            {
+                MessageBox.Show("El producto no existe en el inventario.");
+            }
+        }
+
     }
 }

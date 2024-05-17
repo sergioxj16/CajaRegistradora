@@ -10,10 +10,10 @@ namespace CajaRegistradora.Clases
     {
         private static Dictionary<string, string> usuarios = new Dictionary<string, string>();
         public static Dictionary<string, string> Usuarios { get => usuarios; }
+        const string rutaArchivo = @"Datos\usuarios.txt";
 
         public static void CargarUsuariosDesdeArchivo()
         {
-            string rutaArchivo = @"Datos\usuarios.txt";
             try
             {
                 string[] lineas = File.ReadAllLines(rutaArchivo);
@@ -24,7 +24,6 @@ namespace CajaRegistradora.Clases
                     string contrasenaUsuario = datosUsuario[1];
                     usuarios.Add(nombreUsuario, contrasenaUsuario);
                 }
-                MessageBox.Show("Carga usuarios");
             }
             catch(FileNotFoundException ex)
             {
@@ -33,7 +32,6 @@ namespace CajaRegistradora.Clases
             catch (Exception ex)
             {
                 MessageBox.Show("Error usuarios " + ex.Message);
-                Console.WriteLine("Error al cargar usuarios desde el archivo: " + ex.Message);
             }
         }
 
@@ -84,7 +82,6 @@ namespace CajaRegistradora.Clases
 
         private static void ActualizarArchivoUsuarios()
         {
-            string rutaArchivo = @"Datos\usuarios.txt";
             try
             {
                 using (StreamWriter escribirFichero = new StreamWriter(rutaArchivo, false))

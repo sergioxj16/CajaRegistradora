@@ -19,15 +19,6 @@ namespace CajaRegistradora.Clases
             Stock = 0;
         }
 
-        public Producto(string codigo, string nombre, double precioVenta)
-        {
-            Codigo = codigo;
-            Nombre = nombre;
-            PrecioVenta = precioVenta;
-            PrecioCompra = 0;
-            Stock = 0;
-        }
-
         public Producto(string codigo, string nombre, double precioCompra, double precioVenta, int stock)
         {
             Codigo = codigo;

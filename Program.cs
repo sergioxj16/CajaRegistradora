@@ -13,6 +13,7 @@ namespace CajaRegistradora
 
             Inventario inventario = new Inventario();
             inventario.CargarInventarioDesdeArchivo();
+            inventario.GuardarInventarioEnArchivo();
 
             Application.Run(new InicioFormulario());
         }

@@ -33,14 +33,18 @@
             label2 = new Label();
             label3 = new Label();
             nombreTextBox = new TextBox();
-            precioTextBox = new TextBox();
+            precioVentaTextBox = new TextBox();
             Precio = new Label();
             botonAceptar = new Button();
             label1 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            codigoProductoEliminarTextBox = new TextBox();
+            botonBorrarProducto = new Button();
             label5 = new Label();
+            precioCompraTextBox = new TextBox();
+            stockTextBox = new TextBox();
+            label6 = new Label();
+            label7 = new Label();
             SuspendLayout();
             // 
             // botonVolver
@@ -55,7 +59,7 @@
             // 
             // codigoProductoTextBox
             // 
-            codigoProductoTextBox.Location = new Point(223, 147);
+            codigoProductoTextBox.Location = new Point(223, 150);
             codigoProductoTextBox.Name = "codigoProductoTextBox";
             codigoProductoTextBox.Size = new Size(197, 27);
             codigoProductoTextBox.TabIndex = 0;
@@ -63,7 +67,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(223, 124);
+            label2.Location = new Point(223, 127);
             label2.Name = "label2";
             label2.Size = new Size(58, 20);
             label2.TabIndex = 3;
@@ -72,7 +76,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(223, 177);
+            label3.Location = new Point(223, 189);
             label3.Name = "label3";
             label3.Size = new Size(64, 20);
             label3.TabIndex = 4;
@@ -80,30 +84,30 @@
             // 
             // nombreTextBox
             // 
-            nombreTextBox.Location = new Point(223, 200);
+            nombreTextBox.Location = new Point(223, 210);
             nombreTextBox.Name = "nombreTextBox";
             nombreTextBox.Size = new Size(197, 27);
             nombreTextBox.TabIndex = 1;
             // 
-            // precioTextBox
+            // precioVentaTextBox
             // 
-            precioTextBox.Location = new Point(223, 254);
-            precioTextBox.Name = "precioTextBox";
-            precioTextBox.Size = new Size(197, 27);
-            precioTextBox.TabIndex = 2;
+            precioVentaTextBox.Location = new Point(223, 260);
+            precioVentaTextBox.Name = "precioVentaTextBox";
+            precioVentaTextBox.Size = new Size(197, 27);
+            precioVentaTextBox.TabIndex = 2;
             // 
             // Precio
             // 
             Precio.AutoSize = true;
-            Precio.Location = new Point(223, 231);
+            Precio.Location = new Point(223, 240);
             Precio.Name = "Precio";
-            Precio.Size = new Size(50, 20);
+            Precio.Size = new Size(90, 20);
             Precio.TabIndex = 7;
-            Precio.Text = "Precio";
+            Precio.Text = "Precio venta";
             // 
             // botonAceptar
             // 
-            botonAceptar.Location = new Point(271, 308);
+            botonAceptar.Location = new Point(274, 412);
             botonAceptar.Name = "botonAceptar";
             botonAceptar.Size = new Size(94, 29);
             botonAceptar.TabIndex = 3;
@@ -129,21 +133,22 @@
             label4.TabIndex = 9;
             label4.Text = "Eliminar producto";
             // 
-            // textBox1
+            // codigoProductoEliminarTextBox
             // 
-            textBox1.Location = new Point(473, 147);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 27);
-            textBox1.TabIndex = 10;
+            codigoProductoEliminarTextBox.Location = new Point(473, 147);
+            codigoProductoEliminarTextBox.Name = "codigoProductoEliminarTextBox";
+            codigoProductoEliminarTextBox.Size = new Size(197, 27);
+            codigoProductoEliminarTextBox.TabIndex = 10;
             // 
-            // button1
+            // botonBorrarProducto
             // 
-            button1.Location = new Point(517, 180);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 11;
-            button1.Text = "Confirmar";
-            button1.UseVisualStyleBackColor = true;
+            botonBorrarProducto.Location = new Point(517, 180);
+            botonBorrarProducto.Name = "botonBorrarProducto";
+            botonBorrarProducto.Size = new Size(94, 29);
+            botonBorrarProducto.TabIndex = 11;
+            botonBorrarProducto.Text = "Confirmar";
+            botonBorrarProducto.UseVisualStyleBackColor = true;
+            botonBorrarProducto.Click += botonBorrarProducto_Click;
             // 
             // label5
             // 
@@ -154,19 +159,55 @@
             label5.TabIndex = 12;
             label5.Text = "Codigo";
             // 
+            // precioCompraTextBox
+            // 
+            precioCompraTextBox.Location = new Point(223, 320);
+            precioCompraTextBox.Name = "precioCompraTextBox";
+            precioCompraTextBox.Size = new Size(197, 27);
+            precioCompraTextBox.TabIndex = 13;
+            // 
+            // stockTextBox
+            // 
+            stockTextBox.Location = new Point(223, 380);
+            stockTextBox.Name = "stockTextBox";
+            stockTextBox.Size = new Size(197, 27);
+            stockTextBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(223, 297);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 20);
+            label6.TabIndex = 15;
+            label6.Text = "Precio compra";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(223, 357);
+            label7.Name = "label7";
+            label7.Size = new Size(45, 20);
+            label7.TabIndex = 16;
+            label7.Text = "Stock";
+            // 
             // ProductoFormulario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1145, 453);
+            ClientSize = new Size(1145, 531);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(stockTextBox);
+            Controls.Add(precioCompraTextBox);
             Controls.Add(label5);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(botonBorrarProducto);
+            Controls.Add(codigoProductoEliminarTextBox);
             Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(botonAceptar);
             Controls.Add(Precio);
-            Controls.Add(precioTextBox);
+            Controls.Add(precioVentaTextBox);
             Controls.Add(nombreTextBox);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -174,7 +215,7 @@
             Controls.Add(botonVolver);
             Name = "ProductoFormulario";
             StartPosition = FormStartPosition.Manual;
-            Text = "Producto";
+            Text = " ";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,13 +227,17 @@
         private Label label2;
         private Label label3;
         private TextBox nombreTextBox;
-        private TextBox precioTextBox;
+        private TextBox precioVentaTextBox;
         private Label Precio;
         private Button botonAceptar;
         private Label label1;
         private Label label4;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox codigoProductoEliminarTextBox;
+        private Button botonBorrarProducto;
         private Label label5;
+        private TextBox precioCompraTextBox;
+        private TextBox stockTextBox;
+        private Label label6;
+        private Label label7;
     }
 }

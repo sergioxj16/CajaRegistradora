@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
@@ -9,6 +9,7 @@ namespace CajaRegistradora.Clases
     internal class Inventario
     {
         public Dictionary<string, Producto> Productos { get; set; }
+        const string rutaArchivo = @"Datos\productos.json";
 
         public Inventario()
         {
@@ -21,15 +22,11 @@ namespace CajaRegistradora.Clases
             {
                 Productos.Add(producto.Codigo, producto);
             }
-            else
-            {
-                Console.WriteLine("El producto ya existe en el inventario.");
-            }
         }
 
         public void GuardarInventarioEnArchivo()
         {
-            const string rutaArchivo = @"Datos\productos.json";
+            
             try
             {
                 string jsonProductos;
@@ -49,8 +46,6 @@ namespace CajaRegistradora.Clases
                 jsonProductos = JsonSerializer.Serialize(Productos, new JsonSerializerOptions { WriteIndented = true });
 
                 File.WriteAllText(rutaArchivo, jsonProductos);
-                Console.WriteLine("Inventario guardado correctamente en el archivo.");
-                MessageBox.Show("Guardar correcto");
             }
             catch (Exception ex)
             {
@@ -60,21 +55,10 @@ namespace CajaRegistradora.Clases
 
         public void CargarInventarioDesdeArchivo()
         {
-            const string rutaArchivo = @"Datos\productos.json";
             try
             {
-                if (!File.Exists(rutaArchivo))
-                {
-                    Directory.CreateDirectory(Path.GetDirectoryName(rutaArchivo));
-                    using (File.Create(rutaArchivo)) { }
-                    MessageBox.Show("El archivo de inventario no existía, se ha creado uno nuevo.");
-                }
-                else
-                {
-                    string jsonProductos = File.ReadAllText(rutaArchivo);
-                    Productos = JsonSerializer.Deserialize<Dictionary<string, Producto>>(jsonProductos);
-                    Console.WriteLine("Inventario cargado correctamente desde el archivo.");
-                }
+                string jsonProductos = File.ReadAllText(rutaArchivo);
+                Productos = JsonSerializer.Deserialize<Dictionary<string, Producto>>(jsonProductos);
             }
             catch (Exception ex)
             {
@@ -88,10 +72,6 @@ namespace CajaRegistradora.Clases
             {
                 Productos.Remove(codigo);
             }
-            else
-            {
-                Console.WriteLine("El producto no existe en el inventario.");
-            }
         }
 
         public void ActualizarStock(string codigo, int cantidad)
@@ -99,10 +79,6 @@ namespace CajaRegistradora.Clases
             if (Productos.ContainsKey(codigo))
             {
                 Productos[codigo].Stock += cantidad;
-            }
-            else
-            {
-                Console.WriteLine("El producto no existe en el inventario.");
             }
         }
 
@@ -112,18 +88,10 @@ namespace CajaRegistradora.Clases
             {
                 Productos[codigo].PrecioVenta = precio;
             }
-            else
-            {
-                Console.WriteLine("El producto no existe en el inventario.");
-            }
         }
 
         public void MostrarProductos()
-        {
-            foreach (var producto in Productos.Values)
-            {
-                Console.WriteLine($"Código: {producto.Codigo}, Nombre: {producto.Nombre}, Precio Compra: {producto.PrecioCompra}, Precio Venta: {producto.PrecioVenta}, Stock: {producto.Stock}");
-            }
+        { 
         }
     }
 }
