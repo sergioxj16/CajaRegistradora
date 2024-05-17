@@ -46,7 +46,6 @@ namespace CajaRegistradora.Clases
 
         public static void GuardarUsuarioEnArchivo( string nombreUsuario, string contrasena)
         {
-            string rutaArchivo = @"Datos\usuarios.txt";
             try
             {
                 usuarios.Add(nombreUsuario, contrasena);

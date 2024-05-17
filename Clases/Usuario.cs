@@ -14,10 +14,10 @@
 
     public static bool VerificarCredenciales(string nombre, string contrasena)
     {
-
+        bool verificado = false;
         try
         {
-            string rutaArchivo = @"Datos\usuarios.txt";
+            const string rutaArchivo = @"Datos\usuarios.txt";
             string[] lineas = File.ReadAllLines(rutaArchivo);
             foreach (string linea in lineas)
             {
@@ -26,7 +26,7 @@
                 string contrasenaUsuario = datosUsuario[1];
                 if (nombreUsuario == nombre && contrasenaUsuario == contrasena)
                 {
-                    return true;
+                    verificado = true;
                 }
             }
         }
@@ -34,6 +34,6 @@
         {
             MessageBox.Show("Error verificar credenciales" + ex.Message);
         }
-        return false;
+        return verificado;
     }
 }
